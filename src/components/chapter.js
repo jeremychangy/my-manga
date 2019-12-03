@@ -18,7 +18,6 @@ class Chapter extends Component {
             console.log(links[i])
         }
         this.setState({ pages: links })
-
     }
 
     componentDidMount() {
