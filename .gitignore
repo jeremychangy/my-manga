@@ -23,6 +23,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# keys
+# firebase config
+config.js
 keys.go
-keys.js
