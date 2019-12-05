@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
-import Chapter from './components/chapter.js'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Navbar from './components/navbar/navbar'
+import Home from './components/home'
+import Chapter from './components/chapter'
+import Login from './components/auth/login'
+import Signup from './components/auth/signup'
 
 class App extends Component {
   render () {
     return (
-      <div className="App">
-        <h1 className="App-header">Gintama chapter 175</h1>
-        <Chapter />
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Navbar />
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route exact path='/chapter' component={Chapter} />
+            <Route path='/login' component={Login} />
+            <Route path='/signup' component={Signup} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }
