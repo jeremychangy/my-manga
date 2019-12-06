@@ -22,7 +22,8 @@ func getChapter() []string {
   return links
 }
 
-func getAllPages(links []string) []string {
+func getAllPages(links []string) [][]string {
+  var chapters = [][]string{}
   var pages = []string{}
   c := colly.NewCollector()
 
@@ -35,9 +36,12 @@ func getAllPages(links []string) []string {
 
   for _, link := range links {
     c.Visit(link)
+    chapters = append(chapters, pages)
+    pages = []string{}
+    break;
   }
 
-  return pages
+  return chapters
 }
 
 func getChapterPages(links []string, chapter int) []string {
@@ -51,7 +55,7 @@ func getChapterPages(links []string, chapter int) []string {
     }
   })
 
-  if (chapter <= 1 || chapter > len(links)) {
+  if (chapter < 1 || chapter > len(links)) {
     return pages
   }
 
@@ -63,10 +67,39 @@ func getChapterPages(links []string, chapter int) []string {
 
 func main() {
   var chapters = getChapter()
-  var chapterPage = getChapterPages(chapters, 2)
-  //var allPages = getAllPages(links)
+  
+  //var allPages = getAllPages(chapters)
+  
+  fmt.Println("[")
 
-  for _, page := range chapterPage {
-    fmt.Println(page)
+  // for _, chapter := range chapterPage {
+  //  fmt.Println(chapter)
+  // }
+
+  for i := 1; i <= len(chapters); i++ {
+    fmt.Println("[")
+    var chapterPage = getChapterPages(chapters, i)
+    for j := 0; j < len(chapterPage); j++ {
+      if (j == len(chapterPage) - 1) {
+        fmt.Printf("'%s'\n", chapterPage[j])
+      } else {
+        fmt.Printf("'%s',\n", chapterPage[j])
+      }
+    }
+
+    if (i == len(chapters)) {
+      fmt.Println("]")
+    } else {
+      fmt.Println("],")
+    }
   }
+
+  fmt.Println("]")
+
+  // for i := 0;  i<=5; i++ {
+  //   chapterPage = getChapterPages(chapters, i)
+  //   for _, page := range chapterPage {
+  //     fmt.Println(page)
+  //   }
+  // }
 }
