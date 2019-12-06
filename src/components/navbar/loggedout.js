@@ -1,12 +1,19 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { NavItem } from 'reactstrap'
 
 const LoggedOut = () => {
   return (
-    <div className="right">
+    <React.Fragment>
+      <NavItem>
       <NavLink to='/login'>Login</NavLink>
-      <NavLink to='/signup'>Sign Up</NavLink>
-    </div>
+      </NavItem>
+      
+      <NavItem>
+        <NavLink to='/signup'>Sign Up</NavLink>
+      </NavItem>
+    </React.Fragment>
+    
   )
 }
 

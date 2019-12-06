@@ -2,14 +2,20 @@ import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logout } from '../../store/actions/authActions'
+import { Nav, NavItem } from 'reactstrap'
 
 const LoggedIn = (props) => {
-    console.log(props.profile.username)
+    const { username } = props.profile
     return (
-        <div className="right">
-            <NavLink to='/login' onClick={props.logout}>Log Out</NavLink>
-            <NavLink to='/'>{props.profile.username}</NavLink>
-        </div>
+        <Nav>
+            <NavItem>
+                <NavLink to={`/u/${username}`} >{props.profile.username}</NavLink>
+            </NavItem>
+            <NavItem>
+                <NavLink to='/login' onClick={props.logout}>Log Out</NavLink>
+            </NavItem>
+        </Nav>
+        
     )
 }
 

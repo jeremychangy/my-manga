@@ -1,20 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 
-class Home extends Component {
-    render() {
-        return (
-            <div> 
-                <h5 className="App-header">Home</h5>
-            </div>
-        )
-    }
+const User = (props) => {
+    return (
+        <div>
+            <h1>
+                {props.match.params.username}
+            </h1>
+            <h2>Mangas:</h2>
+            <ul>
+              <a href="/m/0">Gintama</a>
+            </ul> 
+        </div>
+    )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        
-    }
-}
-
-export default connect()(Home)
+export default User
