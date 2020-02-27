@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
 import { ButtonGroup, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import { withRouter } from 'react-router-dom';
 import gin from '../../gin'
 
 class Chapter extends Component {
@@ -99,4 +98,4 @@ class Chapter extends Component {
     }
 }
 
-export default withRouter(Chapter);
+export default Chapter;

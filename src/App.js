@@ -16,10 +16,10 @@ class App extends Component {
           <NavBar />
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route path='/m/:chapter' component={Chapter} />
-            <Route path='/login' component={Login} />
-            <Route path='/signup' component={Signup} />
-            <Route path='/u/:username' component={User} />
+            <Route exact path='/m/:chapter' component={Chapter} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/signup' component={Signup} />
+            <Route exact path='/u/:username' component={User} />
           </Switch>
         </div>
       </BrowserRouter>
