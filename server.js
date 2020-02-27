@@ -8,6 +8,8 @@ const k = 'https://kissmanga.com'
 const port = 7883
 const app = express()
 
+app.use(express.static('public'))
+
 function getChapters(html) {
   const $ = cheerio.load(html)
   let chapters = $('.listing')
@@ -31,7 +33,7 @@ async function handle(i) {
   return page
 }
 
-app.get('/:chapter', async function(req, res) {
+app.get('/read/:chapter', async function(req, res) {
   let c = req.params.chapter
   let page = await handle(c)
   console.log(`viewing chapter ${c}`)
