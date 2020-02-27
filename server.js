@@ -2,8 +2,6 @@ const express = require('express')
 const cloudscraper = require('cloudscraper')
 const cheerio = require('cheerio')
 
-const crypto = require('./crypto.js')
-
 const m = '/Manga/Gintama'
 //const m = '/Manga/Oyasumi-Punpun'
 const k = 'https://kissmanga.com'
@@ -34,7 +32,7 @@ function getPages(html) {
   let pages = html.match(/\(wrapKA\((.*)\)/g)
   return pages.map(p => {
     let hash = p.substring(p.indexOf('"')+1, p.lastIndexOf('"'))
-    return crypto(hash)
+    return hash
   })
 }
 
@@ -46,7 +44,7 @@ async function handle(i) {
 }
 
 router.route('/api/read').get(async function(req, res) {
-  console.log(req.query.c)
+  //console.log(req.query.c)
   let c = req.query.c
   let page = await handle(c)
   console.log(`viewing chapter ${c}`)
