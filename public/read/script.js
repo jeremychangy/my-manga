@@ -11,10 +11,10 @@ function getImg(c) {
   return fetch(`http:\/\/localhost:7883\/api\/read?c=${c}`)
   .then(res => {return res.json()})
   .then(i => {
-    i['pages'].forEach(function(url, index, originalArray) {
+    i['pages'].forEach(function(data, index, originalArray) {
         let img = document.createElement('img')
-        console.log(url)
-        img.src = url
+        console.log(data)
+        img.src = data
         docFrag.appendChild(img)
     })
     container.appendChild(docFrag);
