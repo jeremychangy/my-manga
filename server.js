@@ -1,8 +1,10 @@
 const express = require('express')
 const cloudscraper = require('cloudscraper')
 const cheerio = require('cheerio')
+const crypto = require('./crypto.js')
 
-const m = '/Manga/Gintama'
+const m = '/Manga/Onepunch-Man'
+//const m = '/Manga/Gintama'
 //const m = '/Manga/Oyasumi-Punpun'
 const k = 'https://kissmanga.com'
 const port = 7883
@@ -32,7 +34,10 @@ function getPages(html) {
   let pages = html.match(/\(wrapKA\((.*)\)/g)
   return pages.map(p => {
     let hash = p.substring(p.indexOf('"')+1, p.lastIndexOf('"'))
-    return hash
+    let link = crypto(hash)
+    if (link === undefined)
+      return ""
+    return link
   })
 }
 
