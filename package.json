@@ -1,0 +1,27 @@
+{
+  "name": "my-manga",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "cloudscraper": "^4.5.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoldingTofu/my-manga.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MoldingTofu/my-manga/issues"
+  },
+  "homepage": "https://github.com/MoldingTofu/my-manga#readme"
+}
