@@ -1,0 +1,1808 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><title>
+	
+    
+    Read manga
+    Onepunch-Man
+    004
+    online in high quality
+    
+</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta property="fb:admins" content="683024937" /><meta property="fb:app_id" content="111670815619329" />
+<script src="/Scripts/jquery17.min.js" type="text/javascript"></script>
+
+<link href="/Content/css/tpl_style.css?v=2" rel="stylesheet" type="text/css" />
+<link href="/Content/css/upload-progress.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="/Content/images/favicon.ico" type="image/x-icon" />
+<!--[if IE 6]><link href="/Content/css/tpl_ie_6.css"  rel="stylesheet" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" href="/Content/css/tpl_ie_7.css" /><![endif]-->
+<!--[if IE 8]><link rel="stylesheet" type="text/css" href="/Content/css/tpl_ie_7.css" /><![endif]-->
+<meta name="description" content="Read Onepunch-Man Chapter 004 Online - Onepunch-Man 004 free and high quality. Unique reading type: All pages - just need to scroll to read next page." />
+<meta name="keywords" content="Read Onepunch-Man Chapter 004 Online, download Onepunch-Man Chapter 004 , Onepunch-Man 004" />
+<meta name="referrer" content="no-referrer" />
+<link rel="image_src" href="http://kissmanga.com/Uploads/Etc/10-21-2012/7167242i137358.jpg" />
+<script type="text/javascript" src="./ca.js"></script>
+<script type="text/javascript" src="./lo.js"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1712467-42"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-1712467-42');
+</script>
+</head>
+<body>
+<div id="containerRoot">
+<div id="head">
+<h3>
+<div style="position: relative; text-align: right; margin: -40px 46px 20px 0px; font: bold 13px Arial;">
+<div id="topHolderBox" style="width: 230px; height: 27px;">
+<img src="https://kissmanga.com/Content/images/user-small.png" style="vertical-align: middle; margin-bottom: 5px">
+<a href="https://kissmanga.com/Login">Login</a> or <a href="https://kissmanga.com/Register">
+Register</a>
+</div>
+</div>
+<div id="search" style="position: relative">
+<form id="formSearch" method="post">
+<p>
+<input size="40" id="keyword" name="keyword" value="" class="text" autocomplete="off" />
+<select id="selectSearch">
+<option value="Manga">Series Name</option>
+<option value="AuthorArtist">Author/Artist</option>
+</select>
+<input id="imgSearch" type="image" src="https://kissmanga.com/Content/images/search.png" class="button" onclick="return false;" />
+</p>
+<div id="result_box" style="display: none; margin-top: -3px; max-height: 300px; overflow-y: auto; overflow-x: hidden;">
+</div>
+<div style="float: left; width: 250px; text-align: left; margin-left: 2px">
+<div style="float: left; width: 90px">
+</div>
+<div style="float: left; width: 85px">
+</div>
+</div>
+<div style="margin: 10px 48px 10px 0">
+<a href="https://kissmanga.com/AdvanceSearch">
+<img src="https://kissmanga.com/Content/images/read.png" width="16px" border="0" style="vertical-align: middle" />&nbsp;&nbsp;Advanced
+Search</a>
+</div>
+</form>
+</div>
+<script type="text/javascript">
+                    $('#imgSearch').click(function () {
+                        Submit();
+                    });
+
+                    var delay = (function () {
+                        var timer = 0;
+                        return function (callback, ms) {
+                            clearTimeout(timer);
+                            timer = setTimeout(callback, ms);
+                        };
+                    })();
+
+                    $('#keyword').keyup(function () {
+                        delay(function () {
+                            Suggest();
+                        }, 500);
+                    });
+
+                    $('#selectSearch').change(function () {
+                        Suggest();
+                    });
+
+                    $("#selectSearch option").each(function () {
+                        var url = location.href;
+                        if (url.indexOf($(this).attr('value')) != -1)
+                            $(this).attr("selected", "selected");
+                    });
+
+                    function Submit() {
+                        if ($.trim($('#keyword').val()).length < 2) {
+                            $('#keyword').blur();
+                            alert('Keyword must be more than one character!');
+                        }
+                        else {
+                            $("#formSearch").attr('action', "https://kissmanga.com/Search/" + $('#selectSearch').val());
+                            $("#formSearch").submit();
+                        }
+                    }
+
+                    function Suggest() {
+                        var keyword = $.trim($('#keyword').val());
+                        if (keyword != "" && $.trim($('#keyword').val()).length > 2) {
+                            $('#result_box').html("<span id='loader'></span>");
+                            $('#result_box').css('display', 'block');
+                            $.ajax(
+                            {
+                                type: "POST",
+                                url: "/Search/SearchSuggest",
+                                data: "type=" + $('#selectSearch').val() + '&keyword=' + keyword,
+                                success: function (message) {
+                                    if (message != "") {
+                                        message += '<a href="#" onclick="return false;">---------------</a>';
+                                        message += '<a href="#" onclick="return false;">PRESS ENTER TO SEARCH MORE...</a>';
+
+                                        $('#result_box').html(message);
+                                    }
+                                    else {
+                                        $('#result_box').html('<a href="#" onclick="return false;">Press Enter to search...</a>');
+                                    }
+                                }
+                            });
+                        }
+                        else {
+                            $('#result_box').html('');
+                            $('#result_box').css('display', 'none');
+                        }
+                    }
+                </script>
+</h3>
+<h1>
+<a href="https://kissmanga.com" title="Read manga online - kissmanga.com" class="logo">Read online manga - kissmanga.com</a></h1>
+</div>
+
+<div class="clear">
+</div>
+<div id="headnav">
+<div id="navbar">
+<div id="navcontainer">
+<ul>
+<li id="liHome"><a href="https://kissmanga.com">Home</a></li>
+<li id="liDS"><a href="https://kissmanga.com/MangaList">Manga
+List</a></li>
+<li id="liComic"><a target="_blank" href="http://readcomiconline.to/">Comic
+List</a></li>
+<li id="liReport"><a rel="nofollow" target="_blank" href="https://www.reddit.com/r/KissCommunitySupport/submit">
+Report/Request</a></li>
+<li id="liCommunity"><a rel="nofollow" target="_blank" href="https://discord.gg/eCzUxNB">
+Forum</a></li>
+<li id="liAnimeOnline"><a target="_blank" title="High quality anime online" href="http://kissanime.ru/">
+Watch anime</a></li>
+<li id="liGame"><a target="_blank" href="http://novelplanet.com">Read Novel</a></li>
+</ul>
+</div>
+</div>
+<script type="text/javascript">
+    var path = 'Manga';
+    var action = 'ReadOnline';
+    if (path == 'Home')
+        $('#liHome a').attr('id', 'currentTab');
+    else if (path == 'Manga' || path == 'Genre' || path == 'Group' || path == 'AuthorArtist')
+        $('#liDS a').attr('id', 'currentTab');
+    else if (action == 'Report')
+        $('#liReport a').attr('id', 'currentTab');
+    else if (action == 'RequestManga')
+        $('#liRequest a').attr('id', 'currentTab');
+    else if (action == 'Guide')
+        $('#liGuide a').attr('id', 'currentTab')
+    else
+        $('#navcontainer a[href*="' + path + '"]').attr('id', 'currentTab');
+</script>
+<div id="navsubbar">
+<p>
+<a href="https://kissmanga.com/Manga/Onepunch-Man">
+Manga
+Onepunch-Man
+information</a>
+</p>
+</div>
+</div>
+
+<div style="width: 95%; text-align: center; margin: auto">
+
+<div style="margin: auto; width: 780px; padding-top: 10px">
+<div style="float: left">
+<script type="text/javascript">
+                            var _0xa5a2 = ["\x37\x32\x6E\x6E\x61\x73\x64\x61\x73\x64\x39\x61\x73\x64\x6E\x31\x32\x33"]; chko = _0xa5a2[0]; key = CryptoJS.SHA256(chko)
+                        </script>
+<label class="lbl">
+Reading type</label>
+<select id="selectReadType" style="width: 110px">
+<option value="0">One page</option>
+<option value="1" selected>All pages</option>
+</select>
+<label class="lbl">
+Chapter</label>
+<select class="selectChapter" style="width: 380px">
+<option value="Punch-001?id=369844">
+001
+</option>
+<option value="Punch-002?id=369845">
+002
+</option>
+<option value="Punch-003?id=369846">
+003
+</option>
+<option value="Punch-004?id=369847" selected>
+004
+</option>
+<option value="Punch-005?id=369848">
+005
+</option>
+<option value="Punch-006?id=369849">
+006
+</option>
+<option value="Punch-007?id=369850">
+007
+</option>
+<option value="Punch-008?id=369851">
+008
+</option>
+<option value="Punch-008-005?id=369852">
+008.005
+</option>
+<option value="Punch-009?id=369853">
+009
+</option>
+<option value="Punch-010?id=369854">
+010
+</option>
+<option value="Punch-011?id=369855">
+011
+</option>
+<option value="Punch-012?id=369856">
+012
+</option>
+<option value="Punch-013?id=369857">
+013
+</option>
+<option value="Punch-014?id=369858">
+014
+</option>
+<option value="Punch-015?id=369859">
+015
+</option>
+<option value="Punch-015-005?id=369860">
+015.005
+</option>
+<option value="Punch-016?id=369861">
+016
+</option>
+<option value="Punch-017?id=369862">
+017
+</option>
+<option value="Punch-018?id=369863">
+018
+</option>
+<option value="Punch-019?id=369864">
+019
+</option>
+<option value="Punch-020?id=369866">
+020
+</option>
+<option value="Punch-020-005?id=369867">
+020.005
+</option>
+<option value="Punch-020-006?id=369868">
+020.006
+</option>
+<option value="Punch-021?id=369869">
+021
+</option>
+<option value="Punch-022?id=369870">
+022
+</option>
+<option value="Punch-023?id=369871">
+023
+</option>
+<option value="Punch-024?id=369872">
+024
+</option>
+<option value="Punch-024-005?id=369873">
+024.005
+</option>
+<option value="Punch-025?id=369874">
+025
+</option>
+<option value="Punch-026?id=369875">
+026
+</option>
+<option value="Punch-027?id=369876">
+027
+</option>
+<option value="Punch-028?id=369877">
+028
+</option>
+<option value="Punch-029?id=369878">
+029
+</option>
+<option value="Punch-029-005?id=369879">
+029.005
+</option>
+<option value="Punch-030?id=369880">
+030
+</option>
+<option value="Punch-031?id=369881">
+031
+ </option>
+<option value="Punch-032?id=369882">
+032
+</option>
+<option value="Punch-033?id=369883">
+033
+</option>
+<option value="Punch-034?id=369884">
+034
+</option>
+<option value="Punch-034-005?id=369885">
+034.005
+</option>
+<option value="Punch-035?id=369886">
+035
+</option>
+<option value="Punch-036?id=369887">
+036
+</option>
+<option value="Punch-037?id=369888">
+037
+</option>
+<option value="Punch-037-005?id=369889">
+037.005
+</option>
+<option value="Punch-037-006?id=369890">
+037.006
+</option>
+<option value="Punch-037-007?id=369891">
+037.007
+</option>
+<option value="Punch-038?id=369892">
+038
+</option>
+<option value="Punch-039?id=369893">
+039
+</option>
+<option value="Punch-040?id=369894">
+040
+</option>
+<option value="Vol--008-Ch-040-002----Hotpot--A-Battle-No-One-Must-Lose?id=444399">
+Vol. 008 Ch.040.002 - Hotpot: A Battle No One Must Lose
+</option>
+<option value="Punch-040-005?id=369895">
+040.005
+</option>
+<option value="Punch-040-006?id=369896">
+040.006
+</option>
+<option value="Punch-041?id=369897">
+041
+</option>
+<option value="Punch-042?id=369899">
+042
+</option>
+<option value="Punch-043?id=369900">
+043
+</option>
+<option value="Punch-044?id=369901">
+044
+</option>
+<option value="Punch-045?id=369902">
+045
+</option>
+<option value="Punch-046?id=369903">
+046
+</option>
+<option value="Punch-047?id=369904">
+047
+</option>
+<option value="Punch-047-005?id=369905">
+047.005
+</option>
+<option value="Punch-048?id=369906">
+048
+</option>
+<option value="Punch-049?id=369907">
+049
+</option>
+<option value="Punch-050?id=369908">
+050
+</option>
+<option value="Punch-051?id=369909">
+051
+</option>
+<option value="Punch-052?id=369910">
+052
+</option>
+<option value="Punch-053?id=369911">
+053
+</option>
+<option value="Punch-054?id=369912">
+054
+</option>
+<option value="Punch-055?id=369913">
+055
+</option>
+<option value="Punch-055-005?id=369914">
+055.005
+</option>
+<option value="Punch-055-006?id=369915">
+055.006
+</option>
+<option value="Punch-055-007?id=369916">
+055.007
+</option>
+<option value="Punch-056?id=369917">
+056
+</option>
+<option value="Punch-057?id=369918">
+057
+</option>
+<option value="Punch-058?id=369919">
+058
+</option>
+<option value="Punch-059?id=369920">
+059
+</option>
+<option value="Punch-060?id=369921">
+060
+</option>
+<option value="060-001---The-Reason-I-Seek?id=417817">
+060.001 - The Reason I Seek
+</option>
+<option value="060-002---Part-002?id=417818">
+060.002 - Part 002
+</option>
+<option value="Punch-061?id=369922">
+061
+</option>
+<option value="061---Contest-and-Combat?id=417819">
+061 - Contest and Combat
+</option>
+<option value="Punch-061-005?id=369923">
+061.005
+</option>
+<option value="062---Part-002?id=371427">
+062 - Part 002
+</option>
+<option value="063---Limit?id=371431">
+063 - Limit
+</option>
+<option value="064---Part-004?id=371433">
+064 - Part 004
+</option>
+<option value="065---Sisters?id=371434">
+065 - Sisters
+</option>
+<option value="065-002---Part-002?id=371436">
+065.002 - Part 002
+</option>
+<option value="066---The-Strong?id=371437">
+066 - The Strong
+</option>
+<option value="067---Exceeding-the-Norm?id=371440">
+067 - Exceeding the Norm
+</option>
+<option value="068---Great-Battle-Power?id=371441">
+068 - Great Battle Power
+</option>
+<option value="068-002---Part-002?id=371442">
+068.002 - Part 002
+</option>
+<option value="Punch-069?id=369930">
+069
+</option>
+<option value="069---Monster-Cells?id=371444">
+069 - Monster Cells
+</option>
+<option value="Punch-069-001?id=369931">
+069.001
+</option>
+<option value="Punch-069-005?id=369932">
+069.005
+</option>
+<option value="070---Being-Strong-is-Fun?id=371447">
+070 - Being Strong is Fun
+</option>
+<option value="070-002---Part-002?id=371448">
+070.002 - Part 002
+</option>
+<option value="071---This-is-Real-Martial-Arts-?id=371449">
+071 - This is Real Martial Arts!
+</option>
+<option value="Punch-071-005?id=406817">
+071.005
+</option>
+<option value="072---Monster-Transformation?id=371450">
+072 - Monster Transformation
+</option>
+<option value="072-002---Part-002?id=360595">
+072.002 - Part 002
+</option>
+<option value="Special---One-Shot?id=360596">
+072.003 One-Shot
+</option>
+<option value="073---Resistance-of-the-Strong?id=360597">
+073 - Resistance of the Strong
+</option>
+<option value="073-002---Part-002?id=364192">
+073.002 - Part 002
+</option>
+<option value="074---Depths-of-Despair?id=364208">
+074 - Depths of Despair
+</option>
+<option value="074-002---Part-002?id=365805">
+ 074.002 - Part 002
+</option>
+<option value="075---Foul-Play?id=367210">
+075 - Foul Play
+</option>
+<option value="076---Stagnation-and-Growth?id=369500">
+076 - Stagnation and Growth
+</option>
+<option value="077---Bored-As-Usual?id=371458">
+077 - Bored As Usual
+</option>
+<option value="078---They-who-run-in-the-shadows?id=375070">
+078 - They who run in the shadows
+</option>
+<option value="079---What-It-Means-To-Be-Cheap?id=377070">
+079 - What It Means To Be Cheap
+</option>
+<option value="080---Surrounded?id=379838">
+080 - Surrounded
+</option>
+<option value="Vol--015-Ch-080-001---Volume-015-Extras?id=436630">
+Vol. 015 Ch.080.001 - Volume 015 Extras
+</option>
+<option value="Vol--015-Ch-080-005----Disaster-Level?id=587633">
+Vol. 015 Ch.080.005 - Disaster Level
+</option>
+<option value="Vol--015-Ch-080-009---Volume-015-Extras?id=436646">
+Vol. 015 Ch.080.009 - Volume 015 Extras
+</option>
+<option value="081---Obstinacy?id=385291">
+081 - Obstinacy
+</option>
+<option value="082---All-out?id=387068">
+082 - All-out
+</option>
+<option value="083---The-Hard-Road-Uphill?id=389534">
+083 - The Hard Road Uphill
+</option>
+<option value="084---Escalation?id=393511">
+084 - Escalation
+</option>
+<option value="Vol--016-Ch-084-001---Volume-016-Extras?id=436399">
+Vol. 016 Ch.084.001 - Volume 016 Extras
+</option>
+<option value="085---Is-it-because-I-m-the-Caped-Baldy-?id=397029">
+085 - Is it because I&#39;m the Caped Baldy?
+</option>
+<option value="Vol--017-Ch-085-001----Extra--Confidence?id=444400">
+Vol. 017 Ch.085.001 - Extra: Confidence
+</option>
+<option value="Vol--017-Ch-085-001---Extra--Confidence?id=436631">
+Vol. 017 Ch.085.001 - Extra: Confidence
+</option>
+<option value="086---Hideout?id=400589">
+086 - Hideout
+</option>
+<option value="Vol--017-Ch-086-005---Bonus--Confidence?id=567157">
+Vol. 017 Ch.086.005 - Bonus: Confidence
+</option>
+<option value="Chapter-087--Monster-Side?id=402832">
+087: Monster Side
+</option>
+<option value="Vol--017-Ch-087-005---Bonus--Confidence?id=556623">
+Vol. 017 Ch.087.005 - Bonus: Confidence
+</option>
+<option value="Punch-088?id=404719">
+088
+</option>
+<option value="089---Hot-Pot?id=412100">
+089 - Hot Pot
+</option>
+<option value="Vol--018-Ch-089-001---Omake?id=477817">
+Vol. 018 Ch.089.001 - Omake
+</option>
+<option value="Vol--018-Ch-089-005---Bonus--Oh-Crap?id=567158">
+Vol. 018 Ch.089.005 - Bonus: Oh Crap
+</option>
+<option value="090---Because-I-m-a-Monster?id=414992">
+090 - Because I&#39;m a Monster
+</option>
+<option value="Vol--018-Ch-090-005---Bonus--Oh-Crap?id=556624">
+Vol. 018 Ch.090.005 - Bonus: Oh Crap
+</option>
+<option value="Punch-091?id=417438">
+091
+</option>
+<option value="Ch-092---Manhole?id=422515">
+Ch.092 - Manhole
+</option>
+<option value="Vol--019-Ch-092-005---Bonus--Reality-Strikes?id=567159">
+Vol. 019 Ch.092.005 - Bonus: Reality Strikes
+</option>
+<option value="Ch-093---Let-s-Go-?id=426841">
+Ch.093 - Let&#39;s Go!
+</option>
+
+<option value="Ch-094---I-See?id=435798">
+Ch.094 - I See
+</option>
+<option value="Vol--019-Ch-094-005---Bonus--Reality-Strikes?id=519662">
+Vol. 019 Ch.094.005 - Bonus: Reality Strikes
+</option>
+<option value="Ch-095----Speedster?id=444404">
+Ch.095 - Speedster
+</option>
+<option value="Ch-096----The-Time-is-Now?id=446879">
+Ch.096 - The Time is Now
+</option>
+<option value="Ch-097----Backpack?id=450019">
+Ch.097 - Backpack
+</option>
+<option value="Ch-098----Tears-of-regret?id=452455">
+Ch.098 - Tears of regret
+</option>
+<option value="Vol--021-Ch-098-005---Bonus--Can-Hardly-Wait---Volume-Extras?id=572566">
+Vol. 021 Ch.098.005 - Bonus: Can Hardly Wait + Volume Extras
+</option>
+<option value="Ch-099----Take-off?id=455290">
+Ch.099 - Take off
+</option>
+<option value="Ch-099-002----Take-off?id=458380">
+Ch.099.002 - Take off
+</option>
+<option value="Ch-099-003----Heat-Up--Ch-099-Redrawn-by-Murata-?id=462646">
+Ch.099.003 - Heat Up (Ch.099 Redrawn by Murata)
+</option>
+<option value="Ch-100?id=470909">
+Ch.100
+</option>
+<option value="Ch-100-002?id=470910">
+Ch.100.002
+</option>
+<option value="Ch-101?id=477536">
+Ch.101
+</option>
+<option value="Ch-102---Sweet-mask?id=479335">
+Ch.102 - Sweet mask
+</option>
+<option value="Ch-102-002---Sweet-Mask--New-Revised-?id=497732">
+Ch.102.002 - Sweet Mask [New/Revised]
+</option>
+<option value="Ch-103---Viewer-Prohibited-Battle?id=492367">
+Ch.103 - Viewer Prohibited Battle
+</option>
+<option value="Ch-104---Superhuman?id=497733">
+Ch.104 - Superhuman
+</option>
+<option value="Ch-105---Love-Revolution?id=509124">
+Ch.105 - Love Revolution
+</option>
+<option value="Ch-106---A-Clash-of-Power?id=512683">
+Ch.106 - A Clash of Power
+</option>
+<option value="Ch-107---N-A?id=516789">
+Ch.107 - N/A
+</option>
+<option value="Ch-108---Orochi-vs-Saitama?id=524924">
+Ch.108 - Orochi vs Saitama
+</option>
+<option value="Ch-109---Fake?id=526409">
+Ch.109 - Fake
+</option>
+<option value="Ch-110---Atomic-Samurai?id=530032">
+Ch.110 - Atomic Samurai
+</option>
+<option value="Ch-111---Terrible-Multiplying-Bastard?id=534548">
+Ch.111 - Terrible Multiplying Bastard
+</option>
+<option value="Ch-111-005---Bonus--Owned-Items?id=536705">
+Ch.111.005 - Bonus: Owned Items
+</option>
+<option value="Ch-112---The-Power-of-Light?id=536843">
+Ch.112 - The Power of Light
+</option>
+<option value="Ch-113---Terrible-Luck?id=540455">
+Ch.113 - Terrible Luck
+</option>
+<option value="Ch-114---Cadres?id=544506">
+Ch.114 - Cadres
+</option>
+<option value="Ch-115---Encounter?id=548274">
+Ch.115 - Encounter
+</option>
+<option value="Ch-116---Playtime?id=551004">
+Ch.116 - Playtime
+</option>
+<option value="Ch-117---Cornered-Animals?id=553822">
+Ch.117 - Cornered Animals
+</option>
+<option value="Ch-118---Drive-Knight?id=556625">
+Ch.118 - Drive Knight
+</option>
+<option value="Ch-119---A-glimpse-behind-the-scenes?id=559934">
+Ch.119 - A glimpse behind the scenes
+</option>
+<option value="Ch-120---The-Only-Necessary-Thing-Is-Strength?id=563138">
+Ch.120 - The Only Necessary Thing Is Strength
+</option>
+<option value="Ch-121---Broken?id=567160">
+Ch.121 - Broken
+</option>
+<option value="Ch-122---Unknown?id=570473">
+Ch.122 - Unknown
+</option>
+<option value="Ch-122-005---Bonus--Can-Hardly-Wait---Volume-Extras?id=572535">
+Ch.122.005 - Bonus: Can Hardly Wait + Volume Extras
+</option>
+<option value="Ch-123---Real-Form?id=573792">
+Ch.123 - Real Form
+</option>
+<option value="Ch-124---New-Fubuki-Group?id=576966">
+Ch.124 - New Fubuki Group
+</option>
+<option value="Ch-125----Sit-?id=584314">
+Ch.125 - Sit!
+</option>
+<option value="Ch-126----Psykos?id=587486">
+Ch.126 - Psykos
+</option>
+<option value="Ch-126-002?id=595154">
+Ch.126.002
+</option>
+<option value="Ch-127----Demons-Combined-?id=595245">
+Ch.127 - Demons Combined!
+</option>
+</select>
+</div>
+<div style="float: left; padding-left: 20px">
+<a href="https://kissmanga.com/Manga/Onepunch-Man/Punch-003?id=369846">
+<img class='btnPrevious' src="https://kissmanga.com/Content/images/previous.png" title="Prev chapter" border="0" /></a>&nbsp;&nbsp;
+<a href="https://kissmanga.com/Manga/Onepunch-Man/Punch-005?id=369848">
+<img class='btnNext' src="https://kissmanga.com/Content/images/next.png" title="Next chapter" border="0" /></a>
+</div>
+</div>
+
+<div class="clear">
+&nbsp;</div>
+
+<div class="clear2">&nbsp;</div>
+<div class="clear2">&nbsp;</div>
+<div class="clear2">&nbsp;</div>
+<div class="clear2">&nbsp;</div>
+<iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" id="adsIfrme3" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" src="/ads/adprotect300-3.aspx" width="300px" height="250px">
+</iframe>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" id="adsIfrme2" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" src="/ads/adprotect300-4.aspx" width="300px" height="250px">
+</iframe>
+<div class="clear2">&nbsp;</div>
+<div class="clear2">&nbsp;</div>
+
+<div id="divImage" style="padding-top: 10px">
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+ <img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+<p>
+<img onerror="onErrorImg(this)" onload="onLoadImg(this);" src="" />
+</p>
+</div>
+<div class="clear2">
+&nbsp;</div>
+<div id="divMsg" class="banner" style="margin: auto; width: 500px; height: 120px;
+            margin-top: 20px; display: none">
+<div style="float: left; width: 390px">
+<p style="font-size: 14px; padding: 16px 0 0 6px">
+No more chapters today :(. Please come back later ^^!
+</p>
+</div>
+<div style="float: right; width: 110px">
+<img src="https://kissmanga.com/Content/images/error.png" style="border: 0px" />
+</div>
+</div>
+<div class="clear2">
+&nbsp;</div>
+<div class="clear2">&nbsp;</div>
+<div>
+<iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" id="adsIfrme7" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" src="/ads/adprotect300.aspx" width="300px" height="250px">
+</iframe>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<iframe sandbox="allow-same-origin allow-scripts allow-popups allow-forms" id="adsIfrme8" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" src="/ads/adprotect300-2.aspx" width="300px" height="250px">
+</iframe>
+</div>
+<div class="clear2">&nbsp;</div>
+<div>
+<div id="mdns_54517923"></div><script type="text/javascript" src="//ads.2mdnsys.com/qcas.php?sid=17&unit=5c42a28908bd7&did=545&zid=923&tm=1547870857&k=5c42a28908c1d" async=""></script>
+</div>
+<div class="clear">
+&nbsp;</div>
+
+<div style="margin: auto; width: 600px; padding-top: 10px">
+<div style="float: left">
+<label class="lbl">
+Chapter</label>
+<select class="selectChapter" style="width: 380px">
+<option value="Punch-001?id=369844">
+001
+</option>
+<option value="Punch-002?id=369845">
+002
+</option>
+<option value="Punch-003?id=369846">
+003
+</option>
+<option value="Punch-004?id=369847" selected>
+ 004
+</option>
+<option value="Punch-005?id=369848">
+005
+</option>
+<option value="Punch-006?id=369849">
+006
+</option>
+<option value="Punch-007?id=369850">
+007
+</option>
+<option value="Punch-008?id=369851">
+008
+</option>
+<option value="Punch-008-005?id=369852">
+008.005
+</option>
+<option value="Punch-009?id=369853">
+009
+</option>
+<option value="Punch-010?id=369854">
+010
+</option>
+<option value="Punch-011?id=369855">
+011
+</option>
+<option value="Punch-012?id=369856">
+012
+</option>
+<option value="Punch-013?id=369857">
+013
+</option>
+<option value="Punch-014?id=369858">
+014
+</option>
+<option value="Punch-015?id=369859">
+015
+</option>
+<option value="Punch-015-005?id=369860">
+015.005
+</option>
+<option value="Punch-016?id=369861">
+016
+</option>
+<option value="Punch-017?id=369862">
+017
+</option>
+<option value="Punch-018?id=369863">
+018
+</option>
+<option value="Punch-019?id=369864">
+019
+</option>
+<option value="Punch-020?id=369866">
+020
+</option>
+<option value="Punch-020-005?id=369867">
+020.005
+</option>
+<option value="Punch-020-006?id=369868">
+020.006
+</option>
+<option value="Punch-021?id=369869">
+021
+</option>
+<option value="Punch-022?id=369870">
+022
+</option>
+<option value="Punch-023?id=369871">
+023
+</option>
+<option value="Punch-024?id=369872">
+024
+</option>
+ <option value="Punch-024-005?id=369873">
+024.005
+</option>
+<option value="Punch-025?id=369874">
+025
+</option>
+<option value="Punch-026?id=369875">
+026
+</option>
+<option value="Punch-027?id=369876">
+027
+</option>
+<option value="Punch-028?id=369877">
+028
+</option>
+<option value="Punch-029?id=369878">
+029
+</option>
+<option value="Punch-029-005?id=369879">
+029.005
+</option>
+<option value="Punch-030?id=369880">
+030
+</option>
+<option value="Punch-031?id=369881">
+031
+</option>
+<option value="Punch-032?id=369882">
+032
+</option>
+<option value="Punch-033?id=369883">
+033
+</option>
+<option value="Punch-034?id=369884">
+034
+</option>
+<option value="Punch-034-005?id=369885">
+034.005
+</option>
+<option value="Punch-035?id=369886">
+035
+</option>
+<option value="Punch-036?id=369887">
+036
+</option>
+<option value="Punch-037?id=369888">
+037
+</option>
+<option value="Punch-037-005?id=369889">
+037.005
+</option>
+<option value="Punch-037-006?id=369890">
+037.006
+</option>
+<option value="Punch-037-007?id=369891">
+037.007
+</option>
+<option value="Punch-038?id=369892">
+038
+</option>
+<option value="Punch-039?id=369893">
+039
+</option>
+<option value="Punch-040?id=369894">
+040
+</option>
+<option value="Vol--008-Ch-040-002----Hotpot--A-Battle-No-One-Must-Lose?id=444399">
+Vol. 008 Ch.040.002 - Hotpot: A Battle No One Must Lose
+</option>
+<option value="Punch-040-005?id=369895">
+040.005
+</option>
+<option value="Punch-040-006?id=369896">
+040.006
+</option>
+<option value="Punch-041?id=369897">
+041
+</option>
+<option value="Punch-042?id=369899">
+042
+</option>
+<option value="Punch-043?id=369900">
+043
+</option>
+<option value="Punch-044?id=369901">
+044
+</option>
+<option value="Punch-045?id=369902">
+045
+</option>
+<option value="Punch-046?id=369903">
+046
+</option>
+<option value="Punch-047?id=369904">
+047
+</option>
+<option value="Punch-047-005?id=369905">
+047.005
+</option>
+<option value="Punch-048?id=369906">
+048
+</option>
+<option value="Punch-049?id=369907">
+049
+</option>
+<option value="Punch-050?id=369908">
+050
+</option>
+<option value="Punch-051?id=369909">
+051
+</option>
+<option value="Punch-052?id=369910">
+052
+</option>
+<option value="Punch-053?id=369911">
+053
+</option>
+<option value="Punch-054?id=369912">
+054
+</option>
+<option value="Punch-055?id=369913">
+055
+</option>
+<option value="Punch-055-005?id=369914">
+055.005
+</option>
+<option value="Punch-055-006?id=369915">
+055.006
+</option>
+<option value="Punch-055-007?id=369916">
+055.007
+</option>
+<option value="Punch-056?id=369917">
+056
+</option>
+<option value="Punch-057?id=369918">
+057
+</option>
+<option value="Punch-058?id=369919">
+058
+</option>
+<option value="Punch-059?id=369920">
+059
+</option>
+<option value="Punch-060?id=369921">
+060
+</option>
+<option value="060-001---The-Reason-I-Seek?id=417817">
+060.001 - The Reason I Seek
+</option>
+<option value="060-002---Part-002?id=417818">
+060.002 - Part 002
+</option>
+<option value="Punch-061?id=369922">
+061
+</option>
+<option value="061---Contest-and-Combat?id=417819">
+061 - Contest and Combat
+</option>
+<option value="Punch-061-005?id=369923">
+061.005
+</option>
+<option value="062---Part-002?id=371427">
+062 - Part 002
+</option>
+<option value="063---Limit?id=371431">
+063 - Limit
+</option>
+<option value="064---Part-004?id=371433">
+064 - Part 004
+</option>
+<option value="065---Sisters?id=371434">
+065 - Sisters
+</option>
+<option value="065-002---Part-002?id=371436">
+065.002 - Part 002
+</option>
+<option value="066---The-Strong?id=371437">
+066 - The Strong
+</option>
+<option value="067---Exceeding-the-Norm?id=371440">
+067 - Exceeding the Norm
+</option>
+<option value="068---Great-Battle-Power?id=371441">
+068 - Great Battle Power
+</option>
+<option value="068-002---Part-002?id=371442">
+068.002 - Part 002
+</option>
+<option value="Punch-069?id=369930">
+069
+</option>
+<option value="069---Monster-Cells?id=371444">
+069 - Monster Cells
+</option>
+<option value="Punch-069-001?id=369931">
+069.001
+</option>
+<option value="Punch-069-005?id=369932">
+069.005
+</option>
+<option value="070---Being-Strong-is-Fun?id=371447">
+070 - Being Strong is Fun
+</option>
+<option value="070-002---Part-002?id=371448">
+070.002 - Part 002
+</option>
+<option value="071---This-is-Real-Martial-Arts-?id=371449">
+071 - This is Real Martial Arts!
+</option>
+<option value="Punch-071-005?id=406817">
+071.005
+</option>
+<option value="072---Monster-Transformation?id=371450">
+072 - Monster Transformation
+</option>
+<option value="072-002---Part-002?id=360595">
+072.002 - Part 002
+</option>
+<option value="Special---One-Shot?id=360596">
+072.003 One-Shot
+</option>
+<option value="073---Resistance-of-the-Strong?id=360597">
+073 - Resistance of the Strong
+</option>
+<option value="073-002---Part-002?id=364192">
+073.002 - Part 002
+</option>
+<option value="074---Depths-of-Despair?id=364208">
+074 - Depths of Despair
+</option>
+<option value="074-002---Part-002?id=365805">
+074.002 - Part 002
+</option>
+<option value="075---Foul-Play?id=367210">
+075 - Foul Play
+</option>
+<option value="076---Stagnation-and-Growth?id=369500">
+076 - Stagnation and Growth
+</option>
+<option value="077---Bored-As-Usual?id=371458">
+077 - Bored As Usual
+</option>
+<option value="078---They-who-run-in-the-shadows?id=375070">
+078 - They who run in the shadows
+</option>
+<option value="079---What-It-Means-To-Be-Cheap?id=377070">
+079 - What It Means To Be Cheap
+</option>
+<option value="080---Surrounded?id=379838">
+080 - Surrounded
+</option>
+<option value="Vol--015-Ch-080-001---Volume-015-Extras?id=436630">
+Vol. 015 Ch.080.001 - Volume 015 Extras
+</option>
+<option value="Vol--015-Ch-080-005----Disaster-Level?id=587633">
+Vol. 015 Ch.080.005 - Disaster Level
+</option>
+<option value="Vol--015-Ch-080-009---Volume-015-Extras?id=436646">
+Vol. 015 Ch.080.009 - Volume 015 Extras
+</option>
+<option value="081---Obstinacy?id=385291">
+081 - Obstinacy
+</option>
+<option value="082---All-out?id=387068">
+082 - All-out
+</option>
+<option value="083---The-Hard-Road-Uphill?id=389534">
+083 - The Hard Road Uphill
+</option>
+<option value="084---Escalation?id=393511">
+ 084 - Escalation
+</option>
+<option value="Vol--016-Ch-084-001---Volume-016-Extras?id=436399">
+Vol. 016 Ch.084.001 - Volume 016 Extras
+</option>
+<option value="085---Is-it-because-I-m-the-Caped-Baldy-?id=397029">
+085 - Is it because I'm the Caped Baldy?
+</option>
+<option value="Vol--017-Ch-085-001----Extra--Confidence?id=444400">
+Vol. 017 Ch.085.001 - Extra: Confidence
+</option>
+<option value="Vol--017-Ch-085-001---Extra--Confidence?id=436631">
+Vol. 017 Ch.085.001 - Extra: Confidence
+</option>
+<option value="086---Hideout?id=400589">
+086 - Hideout
+</option>
+<option value="Vol--017-Ch-086-005---Bonus--Confidence?id=567157">
+Vol. 017 Ch.086.005 - Bonus: Confidence
+</option>
+<option value="Chapter-087--Monster-Side?id=402832">
+087: Monster Side
+</option>
+<option value="Vol--017-Ch-087-005---Bonus--Confidence?id=556623">
+Vol. 017 Ch.087.005 - Bonus: Confidence
+</option>
+<option value="Punch-088?id=404719">
+088
+</option>
+<option value="089---Hot-Pot?id=412100">
+089 - Hot Pot
+</option>
+<option value="Vol--018-Ch-089-001---Omake?id=477817">
+Vol. 018 Ch.089.001 - Omake
+</option>
+<option value="Vol--018-Ch-089-005---Bonus--Oh-Crap?id=567158">
+Vol. 018 Ch.089.005 - Bonus: Oh Crap
+</option>
+<option value="090---Because-I-m-a-Monster?id=414992">
+090 - Because I'm a Monster
+</option>
+<option value="Vol--018-Ch-090-005---Bonus--Oh-Crap?id=556624">
+Vol. 018 Ch.090.005 - Bonus: Oh Crap
+</option>
+<option value="Punch-091?id=417438">
+091
+</option>
+<option value="Ch-092---Manhole?id=422515">
+Ch.092 - Manhole
+</option>
+<option value="Vol--019-Ch-092-005---Bonus--Reality-Strikes?id=567159">
+Vol. 019 Ch.092.005 - Bonus: Reality Strikes
+</option>
+<option value="Ch-093---Let-s-Go-?id=426841">
+Ch.093 - Let's Go!
+</option>
+<option value="Ch-094---I-See?id=435798">
+Ch.094 - I See
+</option>
+<option value="Vol--019-Ch-094-005---Bonus--Reality-Strikes?id=519662">
+Vol. 019 Ch.094.005 - Bonus: Reality Strikes
+</option>
+<option value="Ch-095----Speedster?id=444404">
+Ch.095 - Speedster
+</option>
+<option value="Ch-096----The-Time-is-Now?id=446879">
+Ch.096 - The Time is Now
+</option>
+<option value="Ch-097----Backpack?id=450019">
+Ch.097 - Backpack
+</option>
+<option value="Ch-098----Tears-of-regret?id=452455">
+Ch.098 - Tears of regret
+</option>
+<option value="Vol--021-Ch-098-005---Bonus--Can-Hardly-Wait---Volume-Extras?id=572566">
+Vol. 021 Ch.098.005 - Bonus: Can Hardly Wait + Volume Extras
+</option>
+<option value="Ch-099----Take-off?id=455290">
+Ch.099 - Take off
+</option>
+<option value="Ch-099-002----Take-off?id=458380">
+Ch.099.002 - Take off
+</option>
+<option value="Ch-099-003----Heat-Up--Ch-099-Redrawn-by-Murata-?id=462646">
+Ch.099.003 - Heat Up (Ch.099 Redrawn by Murata)
+</option>
+<option value="Ch-100?id=470909">
+Ch.100
+</option>
+<option value="Ch-100-002?id=470910">
+Ch.100.002
+</option>
+<option value="Ch-101?id=477536">
+Ch.101
+</option>
+<option value="Ch-102---Sweet-mask?id=479335">
+Ch.102 - Sweet mask
+</option>
+<option value="Ch-102-002---Sweet-Mask--New-Revised-?id=497732">
+Ch.102.002 - Sweet Mask [New/Revised]
+</option>
+<option value="Ch-103---Viewer-Prohibited-Battle?id=492367">
+Ch.103 - Viewer Prohibited Battle
+</option>
+<option value="Ch-104---Superhuman?id=497733">
+Ch.104 - Superhuman
+</option>
+<option value="Ch-105---Love-Revolution?id=509124">
+Ch.105 - Love Revolution
+</option>
+<option value="Ch-106---A-Clash-of-Power?id=512683">
+Ch.106 - A Clash of Power
+</option>
+<option value="Ch-107---N-A?id=516789">
+Ch.107 - N/A
+</option>
+<option value="Ch-108---Orochi-vs-Saitama?id=524924">
+Ch.108 - Orochi vs Saitama
+</option>
+<option value="Ch-109---Fake?id=526409">
+Ch.109 - Fake
+</option>
+<option value="Ch-110---Atomic-Samurai?id=530032">
+Ch.110 - Atomic Samurai
+</option>
+<option value="Ch-111---Terrible-Multiplying-Bastard?id=534548">
+Ch.111 - Terrible Multiplying Bastard
+</option>
+<option value="Ch-111-005---Bonus--Owned-Items?id=536705">
+Ch.111.005 - Bonus: Owned Items
+</option>
+<option value="Ch-112---The-Power-of-Light?id=536843">
+Ch.112 - The Power of Light
+</option>
+<option value="Ch-113---Terrible-Luck?id=540455">
+Ch.113 - Terrible Luck
+</option>
+<option value="Ch-114---Cadres?id=544506">
+Ch.114 - Cadres
+</option>
+<option value="Ch-115---Encounter?id=548274">
+Ch.115 - Encounter
+</option>
+<option value="Ch-116---Playtime?id=551004">
+Ch.116 - Playtime
+</option>
+<option value="Ch-117---Cornered-Animals?id=553822">
+Ch.117 - Cornered Animals
+</option>
+<option value="Ch-118---Drive-Knight?id=556625">
+Ch.118 - Drive Knight
+</option>
+<option value="Ch-119---A-glimpse-behind-the-scenes?id=559934">
+Ch.119 - A glimpse behind the scenes
+</option>
+<option value="Ch-120---The-Only-Necessary-Thing-Is-Strength?id=563138">
+Ch.120 - The Only Necessary Thing Is Strength
+</option>
+<option value="Ch-121---Broken?id=567160">
+Ch.121 - Broken
+</option>
+<option value="Ch-122---Unknown?id=570473">
+Ch.122 - Unknown
+</option>
+<option value="Ch-122-005---Bonus--Can-Hardly-Wait---Volume-Extras?id=572535">
+Ch.122.005 - Bonus: Can Hardly Wait + Volume Extras
+</option>
+<option value="Ch-123---Real-Form?id=573792">
+Ch.123 - Real Form
+</option>
+<option value="Ch-124---New-Fubuki-Group?id=576966">
+Ch.124 - New Fubuki Group
+</option>
+<option value="Ch-125----Sit-?id=584314">
+Ch.125 - Sit!
+</option>
+<option value="Ch-126----Psykos?id=587486">
+Ch.126 - Psykos
+</option>
+<option value="Ch-126-002?id=595154">
+Ch.126.002
+ </option>
+<option value="Ch-127----Demons-Combined-?id=595245">
+Ch.127 - Demons Combined!
+</option>
+</select>
+</div>
+<div style="float: left; padding-left: 20px">
+<a href="https://kissmanga.com/Manga/Onepunch-Man/Punch-003?id=369846">
+<img class='btnPrevious' src="https://kissmanga.com/Content/images/previous.png" title="Prev chapter" border="0" /></a>&nbsp;&nbsp;
+<a href="https://kissmanga.com/Manga/Onepunch-Man/Punch-005?id=369848">
+<img class='btnNext' src="https://kissmanga.com/Content/images/next.png" title="Next chapter" border="0" /></a>
+</div>
+</div>
+
+<div class="clear2">
+&nbsp;</div>
+<div>
+<a href="#">
+<img border="0" style="vertical-align: middle" src="/Content/Images/upload-icon.png">&nbsp;[
+Back to top ]</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a target="_blank" rel="nofollow" href="https://www.reddit.com/r/KissCommunitySupport/submit">[ Report broken chapter ]</a>
+<div id="divBookmark" style="font-weight: bold; padding-top: 20px">
+&nbsp;&nbsp;<img src="/Content/images/user-small.png" style="vertical-align: middle;
+        margin-bottom: 5px">
+Please <a href="/Login?redirect=%2fManga%2fOnepunch-Man%2fPunch-004%3fid%3d369847">
+Login</a> or <a href="/Register">Register</a> to use <b>Bookmark</b> feature
+</div>
+</div>
+<div class="clear">
+&nbsp;</div>
+<p>
+With manga, please read english scan online from right to left. With Manhwa(Korean)
+or Comic please read english scan online from left to right.
+<br />
+<b>You can chose reading type 'One page'/'All pages' on top. </b>
+</p>
+<div class="clear2">
+&nbsp;</div>
+</div>
+<script type="text/javascript">
+    $('#divImage').hide();
+
+            var lstImages = new Array();
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8L47Q+O7Q8KLlcfe2zazlfvheY20UtsA/yfZRXuDc77Ml+z4ZTR4k/5dKNbY2ErHdvRUT7HIUVu1JBnMa2jAp5VhAJQozaspf2LrpBbIrCT3SleQHsMJ11PdhKVtEdJZBD/qEMj141UKzgXrGelKTIACp+MS1W5H2Ho+UTnGc+/Kk4ks5i2zTtDGrW70NO9ylSmO0q4mps1UIlwEN3OQocctAcDeDH6sbWkN05FxqK5f1MiL49MqdrWbjuPVeveS8wUflmWbyQxx8TbpI+a5DQk="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8Bm9EfXAA6TcBQQbQe8YT811Eh8pDu8q5aPTTGFaqTpji2k8STocSVG/Fzr+pEn1eOO7lV17c/SbXe8kdqKxjXCtN9rp/FPixSRxRt80z1wZkQo5wuw0zTfnqRAkiCkguxCoxCyDKOVV8UZahr5mzJyGKoVdSFtH7LLYddV73ALJewozLl38RxysgQ9ZUtZLMmjmoQd3ILzGduD8+JHwQeP2SPBzZvwLoR0DnW0S7RqvEgjk+SgPF5hM7JR/5D6jG+CKGx0lQ1vlPmgU4+YmGno="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8Eb/OXrhwo8VEsgXNXBv2zdj+ghCIbONsiJk8TRF7mr2wFrzICJQYL2xDrEcCuTmeNeqEolZK4/B4UQcwsgpYnt/3AxJ2iDQzWhWLK0pqujCAfGnXseUeEH9zZjDV/LtcfUnLAoBH3bt8ldnr2AsTcUWxsXoUGPpOlIgoNQrfp9u9xG0q5eyNsDQN9RNMXzmcFcJhGi1uhfVC9aQrAQSgoTMcKYjQiBqo9XpKfGh6i3OVNWSKXbm6Z3a8UtICLcsRvG/X/TC+W8Xj/YZaPxD34U="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8BkdbMVYefXCp1lA2XBm91v3+1LAIF+cUKVnwMwHrQTSosarITjRfEnsYFj0uB3HWw9DyEnd/OTCvBtKPGm03OdOqrX6KlEPlGb5xpIh27GyA2CEF9/3Nk4DUQf2q3sOye8V+zqbwlRwVRrDfXJgAFgdxtjzKbuTPGnTXvlXjnxQfOHef0EbA0+j7uxFe4YzQU7a//paa3L0o+00ab3/C1qDC8feUNwe4Xnbx3O8SABD/gDUALbQb+Y5TgU69Em5lfT+deqqO2GED08vZT9ewFo="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8JHSAQf93SyEMrFrLT5J0X8hMw9sHi/KI8L7Q3jM8xASlSxCi722DmxVEE6rr+d1rrT981TKBblEKiwx9THqOM4WKOqPKBUTeCP+uKu/bJTL/NoHAk9SiF6oz3npoY3PYBxW860MefNGRu0I8GZhl+TaDq7ayLi127IbgpG0W30liC7GndttYrSU7WGDYqL7pLY5L0dbIU1aSeQuO+VksqFxeooRwvXjkXCOMx8hWJUB/kbtmIqXTRDOtdYwoqn9vd2SpdkfXnVLue0+uTsjpeI="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8PXnSpmwomTTlxEbxSO6gRsDh3JAoNcuNAyWTstyjaqbFOwUD/c8SVQ+QuWOHwqc+iGmhU4m/Nq0bO4Wu7kJQNBIlGj+rBH9AcFC3jFrAvk2IQvjsgTsxLtUwC9W7SuPdOvi8p0u4lPZ1uoyY6WjnK8LtOEBldnr07fgUPVKAIfRbPMbiQj4y4a8D8wizjzfQhIZEmNVKJlDy2GGPvGSiNDQkdpRFnzKI++XZNNZjPBGa7wbukc9TVacZ4JegwGjkEfs4AEd0lzdHBYxlZpp5OI="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8Cv0an4Abgl/XPT5LB6xSyxfRxLGeQs7hXloSUpUVVoNU5VBDIg6Q6PkcQ9E7eNtTxj++RvlbL2wWlSK3ZYHy/J9D//hg7euOXktfxI7ZHET9n3xpp0an8J/cv7r773FihKh/CEjBx4ro6GHULdBKFdS3KhGVBhWjSB9E0UcJMEoac74sJIO7SB3NG2J7CSeBQFhKzxXndJXXQ6UBkKn7HGNL5N2dALS30a5x6MCaVXS0DLnUq75ztQ09ji24oz7JJzpLt28fZjjrVn+Xe01WtA="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8I7gPNlfHHN/6LYzzO73ZrXCafHJLM6Xjqzr1YI9hIZh+mIDfQy8zlnLDcHhhjl75C7Mari+GeiUGsY8r6zhRNygTcO3hf3W8rfCNfrhWVhSp9UgBLHD1tiXf60LqBjmFRQs4N9w3KVTPUZOJFBtUOkfy6KxunleCEFXIqRSpHAGIU0ZPVhU7yYLJo8hQmwjHsNG/KwYyiDuNd78L1adyUvt4zRLTrvURoHnOEwJztzwh1DrUd7x4V4TFLJhD2ie9cpW1P3p+RhiEqVYlj5eoZg="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8HG1vRnkS2Xb0iPA1lPtJrPA2hHUm6tX8kh7kmd2X08+PMFLcBfZV8+h+E5pWgEE1gf2RvuHNY8H1SobCHelwAktwF/wR653tYiJGy59u7aV7NC0quH37j3OBlN6B3bS0V7eCQBBxVdgWUmmkJCAePRgM80TZxStYSqsD72dVOdC8vgnGAeGmGRm43SWQXCc1iEMcaLoAV5uguol478XbTLyZdKsb8fqa8+vec9OyWdFXp99Tb5yr7PeuX/grZY7SfJIXJ88+R+4KwslH128r1g="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8GcFoham7z0QVbD2uQuDtVSOuOTbsOju1yLS+MxqSr6v+J2LqAqrxBAYki2a9hq/TyK5DKm79J0jdR+qwr7avaogkC7gF0tUjsUVA0+4ybK0BgxK3odeVhk679e/uy6Jc/jZ+WI9csqwIGdPKBwah/uZ27OdaXc37TNgI516D6TYg4kqJoaK0tJkP1MfgiQuRrC03hKR398nOGSIAdM/kv+1JZBWJySRSraBw0R5+C1VcoUPZwpBpVkiI8oXxVVw/7a6vh2+sjvaIpTzQjsPVJ4="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8JGsEkAjN+XKOwI8lCNUTTixRDg/KIxxaHgfuHdg+/ave/1hPN83bVLZvWeiga0P60N2YT+a8HNg89bUIBOSQa/gXDN+QpnS7Pk9uGNRvxRcIBYTJxAmQXjOv9mamu2S7pTJddAPTJHiJkvC8fgsO1mNOiiB9fGVs9biDhQfCmDHcjipo/LSHfHVCg8Y7AhuMuG9vKT5pKU7+n+BUqjXrFu6eQCKs7MxfiGosq2F5HLfYOBqJQ0dL9+qTmiRnvdwgMgDe31QuSSQ+PM9vKX1aIw="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8Ojci8lYD3346YLwsFRG+RuLTt44I67ZFG9Q9yAIdl/7iLS781ddrW7ZHiy0qCwNnpT93smfxDYlVcGg9W6PvL+b69lgN6ZJ5nmktLnok/UFNMgNkpXLhedL0qeb6cSv4/v37PQ0Zpw+9cmkPACyTTSvcmCwqoxv1cwWrYapi7bCNz59smaDlqyfXl2XBYqc8Ocz/J7HSvvYxmaHyNK65jtu2XU9R/ieXUWRek+NLIomSEmYVH5LRT7YJnqA8K1Vz7cbQfSMD6495KlUNfcdQ1s="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8JDWUxRb47xCqDKaBdB375YD30rI+2tQV6YJqgBrhoi8fZdl5+zLJr1Tq2QkSseeQ0OlN3CzJfPQhYkBcxIWdo2uAajaCaXl30UHmb+EKrfcmWl/4TWzNzZ4aqD11xpazUm017Vd+DK1BMoF559uy6IKdffpujmocm2HW1k+VekzYT+F1WoYRv3pnF6EU2xWSMeqEgvsHeQNCz1E3qo7R9jI9k8eMzidqiSmsLQX1UptmEH2C+lGggJQ/ei/d84unVqd6M6aZ0F4tPzAze//LBs="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8FzOgq8/UptnAisi0BMDq+OqGFsyc3IG/hcdammk9L5rvywLyRDDiMFoOeB0hjCMtRvBzrwMhwxgMBlbTS+MJwlpdmAUga+uKH3+WXozBgq6l+ceBo5+F25VtXfMzIGy3ME/ferjaB3tqwzC1UhcIILEk4UvFmZL5SzEUKmpOiWJn6L6YV64Llcuag/LJQx70fjH8pEjRwbDzRuck5YA2nA3v2YjXS1G2BqgHl22+PjvS4OjFWkFakR8zOeBa6PwN5dkJn94mbXHPI6O86Zxe4E="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8MJgdGAC+iAoCS2x/Q3/gXti2yd7ZasLW4wo8jb7OFC9BD+Ci3XbVW4YzIHo4Niqu/JHrMEkBHPg78yNHTKZIEzmg82urkSmM5u12bZanVrrgAd4W9b73Hzxl8Wa27A7kNNwnvKjxCftamYsReUV3pIWWKNAnkYL6LW0fvb9gRrTwbciJBugNpyM5zY82yV1ZnTLdyJVzu9Nm1qemDlvkPIPY0MD4UDAWVeigYuHejqHG9EbyMkYWaQqXg7Fv235rxaGL2AhCdrxTTAK5Vqt22I="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8LevzgmuJopLSnwevGYaN0yukHR+uU7LmIIi8zvlG4eDQlSnnU+RAzc1IbwuH7RxKc2XrSjSWh4crm4WO43OIve0MRHanMgiWYdNks+dvWBTm2++gUk5w9/CmQwQHccn4sBGV7+VPZtpE+82b5vLpJkB8o3cxCsysl3a+pODIPQTe23Dx1x/uhmSDxC35ttlt61Ir6cUzTP83NVKP7z8yOccIu8rJRrReSiF6WuLhh/PFDWVimy+UCXcBNFXsiQKlZ1imJReLMfxvN0Akv4jAHw="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8G+XEQxPMCYdXnNrvTKelQc3Ox2CYgySin5nDSIM92IEk3DzmejyFknw/L2UtQ5kx2pO5eB/L/I4Bq1jO++zJq6C1MqK/nO0TUWQB2Ue37QnkPPjIrYN14GwdqXn3Iy/1acriPuPyjFrXuzpiYHQeOeLHDIHk/KTtM9h4FlhNkPR064mRyj8SuMoiWMCs+C8gZ+ScCNQkF9r4Vl+R0VbefDmLulzIOrf3kx2aEvNhSbI93OEwrOWcHiwSZBVIPxJUI/2nnOkR0kyV95mrGSrimQ="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8DEM5b2Ue/gnYhseU7DoNoxDfrZ/P8VYp2q+hw+PDYRtlWEFW9M4+Zra4n871pP28NsUnr/RPi+Njrz5Ol4ak5dUJFvRXLk1cuxxT/w3rGKeSRP+BS1+a+1b5wTlsoy7xQDQhFJh6/fULLNGIc0vWNePYgjNpsaLK3qGap3R/kiby4QjCrqCXEuUPD1K8lvDGEElwB//sWS3/r/DG7bgwaE277n/3vVpd71IFp1rsEyu/R2Ye08cHVAtP7Y/RI9HDXefpCG5MwMsTn1bOPPTFGE="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8LtXO7DkiM+gQPgBvEO8GJVT/AkNqK4AGsaIyrx8aWcSM0d/slBL4TsG9y4F5X0n7RwTjVQa/vYynbrhqcY/lU3QD8hgvYpju8yu3+K/k69ZHYHBGGiYOo3i2X08pnVvgTzQKEkNpldWrupldpjnPYTUwlYc/Mn0680xS/eRBm39A4uWohqBGzjS6jjJexpBwsx+j7lScZu6VUpIzP2o8mXSP1tVO42BW77l+RKI0KGNX90rSbYQBb/2J77WEGvBP4nCepjX7PLOdPlurv8ePTQ="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8PwZDgs/49vuMU6RP2hpKhGlMHkpIHuGIPmLZMs6r4bz3y0R/vaKJY/1ncIndf738ydAGUxae64+FE5+2IxAz3//eSoopgZKtxiqzOtUpHtFP0RPCJJsfovuPXskCC7teta7SAAbBSIhU4q75zaIZNvbBKWTg+YVJ2ynXRbOGtBrc5l+9Jgh2fBUkJsfd4oabPsQDpCYqFKP+dRRXM/8JqmTF1WB8nzhuNRJN3+9NBgnQKMO6KpCKRh8oExQLi5kQ7w7ByV3rpqknRBAJxdT5yE="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8O0Pjh7oFE8j5HgEsLkK0p57vhxYN7xfYbniXlTyHvGLsvqsEVXFaKh82i4v9KZ5z8DwowbwytXcsx34i03hcdWPGj18EpN3dLGDKi3K9uZlXrq1mf9n2yzgFH9HVQWy7gYz8QYx1ImTdSNFU2C5DRY/oQzgdg2GKrnTvR5ttEmosJT10dnp/xE0WR6fY/rXt/I1dXHyAIIRtjZMn1/ZdA8MjO5by0gyrb1bYTf/0t7EFTxnqJhif/61pzZ7vKtTEAJL0YDWnVPibvIpOIaZ4l0="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8CpJh9Ud2pMsIwHYQFhZsYH1Em7PzFAjt1cy4HZaEHV3YTms6VZRa84Q/zsq3JtTOBll0/8iJsZzZHbEg/LxhuhVIhUxGqfnEt1Yfa+/AKi4kjYkHKwMrK0Oe41LzedMvrHvr8k/BoPDg9zpJ1bQ8dv/I5kBx2EySk1SQCi8FvPSYLUBUrbfQIegV3yGsy0S5Ql91M/Fa1GlkAxmqQmdzLNAr1URHjG9NJiG0+UFBUwQZZsR/svwxC4BVaYmOBlKBkV1dl3NWIJeGZLvl1N3j7c="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8HaFPZmpNrmNGe3iyUs/viV7Lp/IsuyJ9N8AHCV8hgtIEz/wbmA8HyH+IZ465oyEzdNjW4/R6VKfxkAYv1xs92C1uAnKk+3kkgU29oVWb87EJe04mnESygGlXE1NTOMkaggwUs2Tc04u/nBX8/vtVFMHk7DrAoptshqksmORgmvGAQsN8XsJpjzS6GgMZRG6Zka6GaXcrs+w2Ewjo56uSn+oP+h3LyS5OySseNLaUVdEQfowrU8TPX14DDwK693qwpDVYl2BTP6coXPqYv05jvg="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8PliQTdrqOq8DZ1zwn/2vAKx0ngLj5scNlAsQCzi5T3kATa9cD2nLOTPs6VfEO3Hf9gX1CSnUgdH0g9IQfVLZhrL9GR1QMx0+h5R5gmBNGl5VFbtSyxMq/b2eL3i8nnL/mqMO64kbE6NCdCdixvP8r/kNGsHW2X1IiPokjCg0zmWPneQ9JMGvOa0849oLfO0BPT3TXE/bQ8U9Bt3XsgbmGjgk5A7Luwb9BCOXIuyIAn6gqqvHoOlaG9FaVr/qp+DbYjW0UlkY23X41nSUbEdGxI="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8Lj/Scx5dDPjhBfMZllgozNtb0Zkqmp3qtk3nw9QGfZXW6o9ujU0ObEkmuhB8PqGYE9GYPMHMamB7NaHOTBh/J4PLeUwxewgSzMx4chlZhrysUMkVmPysJMHRh1gQdA8bezKd+Lp3H+cfP1A2iMEF3XHAFOqPR26HjJCZ8Yo38K4eZI1D+X/kmYbADxaH4UXmgxjbTWme0wcshPALusQ6gorJ8f5TjoBqWO4yNMYrfy5MV+sDv01GXSSB/MRimkP7sCV6G/X8eJbEYv53LqL6js="));
+            
+                lstImages.push(wrapKA("rHc+bjdXyL6OurVSEVoA8BTs3uBIYx/duqenC7ZExo1oqFsDMDEEdYxifo9pbGibGbxaBqbLoIRNt9UpL3RLXdY+V9z1eV4fR9eKP9RA9an90njtm1iZ2ETaQO/Lffeh30EzznCjFedXFYY+1aASFmWQAO6j7rZghoQ4eiWXaTZE2XNfrKc1QMchssB4NRiDHcMiHLKZQTgQcq3rtxxy4O7IPqd/2hQvvkR5/fu5ts9kHE1gKDz9FGwK7sKSbnNn0TI/eIyJUnXmK3/0naXcv94RNF4vWbul7ZlfLWiGBp4="));
+            
+
+
+//            var lstImagesLoaded = new Array();
+//            $("#divImage img").load(function() {         
+//                var srcImage = $(this).attr('src');
+//                if (jQuery.inArray(srcImage, lstImagesLoaded) < 0)
+//                {                
+//                    lstImagesLoaded.push(srcImage);
+//                    if (currImage < lstImages.length)
+//                    {
+//                        $('#divImage img[src=""]:first').attr('src', lstImages[currImage]);
+//                        currImage++;
+//                    }      
+//                    else
+//                        $('#imgLoader').hide();
+//                }
+//            }).each(function() {
+//                  if(this.complete) $(this).load();
+//                    });
+
+//            var currImage = 0;                    
+//            $('#divImage img[src=""]:first').attr('src', lstImages[currImage]);
+//            currImage++;
+//            $('#divImage img[src=""]:first').attr('src', lstImages[currImage]);
+//            currImage++;
+            var currImage = 0;  
+            var countTimeOut = 0;
+            $("#divImage img").each(function() {
+//                setTimeout(LoadImageSequence, countTimeOut * 1000);
+//                countTimeOut++;
+                if (currImage < lstImages.length)
+                {
+                    $('#divImage img[src=""]:first').attr('src', lstImages[currImage]);
+                    currImage++;
+                }
+            });
+
+            function LoadImageSequence()
+            {
+                if (currImage < lstImages.length)
+                {
+                    $('#divImage img[src=""]:first').attr('src', lstImages[currImage]);
+                    currImage++;
+                }
+            }
+     
+
+            $('#selectReadType').change(function () {
+                document.cookie = "vns_readType1=" + $(this).val() + ";path=/";// + "; expires=Thu, 2 Aug 2020 20:47:11 UTC;path=/";
+                window.location.reload();
+            });
+
+            $('.selectChapter').change(function () {
+                location.href = 'https://kissmanga.com/Manga/Onepunch-Man/' + $(this).val();
+            });
+
+            $('.selectGroup').change(function () {
+                location.href = 'https://kissmanga.com/Manga/' + $(this).val();
+            });
+
+            function NextChap() {
+                $('#divImage').empty();
+                $('#divMsg').css('display', 'block');
+            }     
+
+            var requestFix = false;
+            function onLoadImg(ele) {
+                if (!requestFix) {
+                    var srcImage = $(ele).attr('src');
+                    if (
+                            ($(ele).width() == 200 && $(ele).height() == 200)
+                            ||
+                            (srcImage.indexOf("imgur.com") > 0 && $(ele).width() == 161 && $(ele).height() == 81)
+                            ) {
+                        requestFix = true;
+                        $.ajax({
+                            type: "POST",
+                            url: "/External/RPB",
+                            data: "rawUrl=" + encodeURIComponent(window.location.href),
+                            success: function(message) {
+                                            
+                            }
+                        });
+                    }
+                }
+
+                // resize
+                if ($(ele).width() > window.screen.width * 1.5) {
+                    $(ele).css("width", "100%");
+                }
+            }
+
+            function onErrorImg(ele){
+                var srcImage = $(ele).attr('src');
+                if (srcImage.indexOf("focus-opensocial.googleusercontent.com") > 0 || srcImage.indexOf(".blogspot.com/") > 0)
+                {
+                    var retry = 10;
+                    while (retry > 0)
+                    {
+                        retry--;
+                        var randomParamRetry = Math.floor(Math.random() * 100000);
+                        $(ele).attr("src", srcImage + "&ver=" + randomParamRetry);
+                    }
+                }
+//                if (!requestFix) {
+//                    if (
+//                            (srcImage.indexOf("funmanga.com") > 0 || srcImage.indexOf("mpcdn.net%") > 0)
+//                            ) {
+//                        requestFix = true;
+//                        $.ajax({
+//                            type: "POST",
+//                            url: "/External/RPB",
+//                            data: "rawUrl=" + encodeURIComponent(window.location.href),
+//                            success: function(message) {
+//                                            
+//                            }
+//                        });
+//                    }
+//                }
+            }
+    </script>
+<script type="text/javascript">
+
+    $('#divImage').show();
+
+    var isClickHide = false;
+    function AddCloseButton(id) {
+        var elem = $('#' + id);
+        if (elem.position() != null) {
+            var top = elem.position().top + elem.height();
+            var left = elem.position().left;
+            elem.after('<div class="divCloseBut" style="position:absolute; left:' + left + 'px; top: ' + top + 'px"><a href="#" onclick="$(\'#' + id + '\').remove();$(this).remove(); InitCloseButton(); isClickHide=true; return false;">Hide</a></div>');
+        }
+    }
+
+    function InitCloseButton() {
+        $('.divCloseBut').remove();
+        AddCloseButton('adsIfrme2');
+        AddCloseButton('adsIfrme3');
+    }
+    setTimeout('InitCloseButton()', 5000);
+
+    $.ajaxSetup({
+        cache: true
+    });
+
+    if ($('iframe[id*=adsIfrme]:visible').length == 0) {
+        alert('Please allow ads on KissManga. Thank you.');
+    }
+</script>
+<div style="text-align: center;">
+<div style="display: inline-table;">
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4fb6029949d99e27" async="async"></script>
+<div class="addthis_native_toolbox">
+</div>
+</div>
+<div class="clear2">
+&nbsp;
+</div>
+<div class="clear2">
+&nbsp;
+</div>
+</div>
+<div class="clear2">
+&nbsp;
+</div>
+<style type="text/css">
+    .specialButton
+    {
+        -moz-box-shadow: inset 0px 1px 0px 0px #c1ed9c;
+        -webkit-box-shadow: inset 0px 1px 0px 0px #c1ed9c;
+        box-shadow: inset 0px 1px 0px 0px #c1ed9c;
+        background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #9dce2c), color-stop(1, #8cb82b) );
+        background: -moz-linear-gradient( center top, #9dce2c 5%, #8cb82b 100% );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9dce2c', endColorstr='#8cb82b');
+        background-color: #9dce2c;
+        -webkit-border-top-left-radius: 20px;
+        -moz-border-radius-topleft: 20px;
+        border-top-left-radius: 20px;
+        -webkit-border-top-right-radius: 20px;
+        -moz-border-radius-topright: 20px;
+        border-top-right-radius: 20px;
+        -webkit-border-bottom-right-radius: 20px;
+        -moz-border-radius-bottomright: 20px;
+        border-bottom-right-radius: 20px;
+        -webkit-border-bottom-left-radius: 20px;
+        -moz-border-radius-bottomleft: 20px;
+        border-bottom-left-radius: 20px;
+        text-indent: 0;
+        border: 1px solid #83c41a;
+        display: inline-block;
+        color: #ffffff;
+        font-family: Arial;
+        font-size: 15px;
+        font-weight: bold;
+        font-style: normal;
+        height: 49px;
+        line-height: 49px;
+        width: 200px;
+        text-decoration: none;
+        text-align: center;
+        text-shadow: 1px 1px 0px #689324;
+    }
+    .specialButton:hover
+    {
+        background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8cb82b), color-stop(1, #9dce2c) );
+        background: -moz-linear-gradient( center top, #8cb82b 5%, #9dce2c 100% );
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8cb82b', endColorstr='#9dce2c');
+        color: #ffffff !important;
+    }
+    .specialButton:active
+    {
+        position: relative;
+        top: 1px;
+    }
+</style>
+<div style="text-align: center; height: 100px; padding-top: 10px">
+<a href="#" class="specialButton" onclick="return false;" id="btnShowComments">
+Show Comments Box</a>
+</div>
+<div style="width: 820px; text-align: center; margin: auto; background-color: #1f1f1f;
+    display: none" id="divComments">
+<div style="width: 780px; display: inline-block">
+<div class="clear2">
+</div>
+<div style="color: #44B9FA; text-align: left">
+- Don't link to other manga/anime sites/any kind of ads.<br />
+- Don't spoil content of next chapters.
+</div>
+<div class="clear2">
+</div>
+<div id="disqus_thread">
+Loading...
+</div>
+<script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'kissmanga'; // required: replace example with your forum shortname
+
+                            
+
+        </script>
+</div>
+<script type="text/javascript">
+        $('#btnShowComments').click(function () {
+            $(this).parent().hide();
+            $('#divComments').show();
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        });
+    </script>
+</div>
+<div class="clear2">
+&nbsp;</div>
+<div style="text-align: center;">
+<a href="#">[ Back to top ]</a>
+</div>
+
+<div class="clear">
+&nbsp;</div>
+<div class="clear">
+&nbsp;</div>
+<div class="clear">
+&nbsp;</div>
+</div>
+<script data-cfasync="false" async type="text/javascript" src="//boyaidare.club/fd3tWflpvlu/17238"></script>
+<script data-cfasync="false" type="text/javascript" src="//guttengyp.club/rGzzfomkGJuVMN/13234"></script>
+<div id="footer">
+<div id="footcontainer" style="position: relative">
+<p>
+<a href="http://kissmanga.com">KissManga.com</a>. Copyrights and trademarks for the manga, and other promotional materials are held by their respective owners and their use is allowed under the fair use clause of the Copyright Law.
+<a href="/Message/PrivacyPolicy">Privacy Policy</a>
+&nbsp;&nbsp;</p>
+<div style="position: absolute; left: 200px; top: 20px">
+</div>
+</div>
+</div>
+<script type="text/javascript">
+        $('#footer').css('top', $(document).height() - $('#containerRoot').height());
+    </script>
+</body>
+</html>
+
