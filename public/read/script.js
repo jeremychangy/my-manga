@@ -13,7 +13,7 @@ function getImg(c) {
   .then(i => {
     i['pages'].forEach(function(data, index, originalArray) {
         let img = document.createElement('img')
-        img.src = data
+        img.src = wrapKA(data)
         docFrag.appendChild(img)
     })
     container.appendChild(docFrag);
