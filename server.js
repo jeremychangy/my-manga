@@ -47,6 +47,16 @@ async function handle(i) {
   return page
 }
 
+async function search(word) {
+  console.log(`searching for ${word}`)
+  let options = {
+    uri: 'https://kissmanga.com/Search/SearchSuggest',
+    formData: {type: 'Manga', keyword: word}
+    //data: 'type=Manga&keyword=' + keyword
+  }
+  return await cloudscraper.post(options).then(console.log)
+}
+
 router.route('/api/read').get(async function(req, res) {
   //console.log(req.query.c)
   let c = req.query.c
