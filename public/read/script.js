@@ -8,7 +8,7 @@ let docFrag = document.createDocumentFragment()
 getImg(chapter)
 
 function getImg(c) {
-  return fetch(`http:\/\/localhost:7883\/api\/read?c=${c}`)
+  fetch(`http:\/\/data.cs.purdue.edu:7883\/api\/read?c=${c}`)
   .then(res => {return res.json()})
   .then(i => {
     i['pages'].forEach(function(data, index, originalArray) {

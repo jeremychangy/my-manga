@@ -30,11 +30,14 @@ function getChapters(html) {
 }
 
 function getPages(html) {
+  let key = html.match(/var _\w* = \[\".*\"\]/g)
+  let val = key[0].substring(key[0].indexOf('"')+1, key[0].lastIndexOf('"'))
   let pages = html.match(/\(wrapKA\((.*)\)/g)
-  return pages.map(p => {
+  let links = pages.map(p => {
     let hash = p.substring(p.indexOf('"')+1, p.lastIndexOf('"'))
     return hash
   })
+  return {'hash': val, 'pages': links}
 }
 
 async function handle(i) {
@@ -49,7 +52,7 @@ router.route('/api/read').get(async function(req, res) {
   let c = req.query.c
   let page = await handle(c)
   console.log(`viewing chapter ${c}`)
-  res.send({'pages': page})
+  res.send(page)
 })
 
 app.use(router)
