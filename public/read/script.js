@@ -8,7 +8,7 @@ let docFrag = document.createDocumentFragment()
 getImg(chapter)
 
 function getImg(c) {
-  fetch(`http:\/\/data.cs.purdue.edu:7883\/api\/read?c=${c}`)
+  return fetch(`http:\/\/data.cs.purdue.edu:7883\/api\/read?c=${c}`)
   .then(res => {return res.json()})
   .then(i => {
     i['pages'].forEach(function(data, index, originalArray) {
@@ -23,7 +23,6 @@ function getImg(c) {
 let nextChapter = document.getElementById('nextChapter')
 window.addEventListener('scroll', function() {
   if (document.documentElement.clientHeight - window.pageYOffset == document.body.clientHeight) {
-//    window.location.replace(`http:\/\/localhost:7883\/read?c=${parseInt(chapter)+1}`)
     chapter = parseInt(chapter) + 1
     getImg(chapter)
   }
