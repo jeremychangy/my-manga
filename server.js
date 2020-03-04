@@ -2,8 +2,8 @@ const express = require('express')
 const cloudscraper = require('cloudscraper')
 const cheerio = require('cheerio')
 
-const m = '/Manga/Onepunch-Man'
-//const m = '/Manga/Gintama'
+//const m = '/Manga/Onepunch-Man'
+const m = '/Manga/Gintama'
 //const m = '/Manga/Oyasumi-Punpun'
 const k = 'https://kissmanga.com'
 const port = 7883
@@ -42,7 +42,7 @@ function getPages(html) {
 
 async function handle(i) {
   let chapters = await cloudscraper.get(k+m).then(getChapters, console.error)
-  let index = chapters.length - i - 1
+  let index = chapters.length - i
   let page = await cloudscraper.get(k+chapters[index]).then(getPages, console.error)
   return page
 }
