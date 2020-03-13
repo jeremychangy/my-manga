@@ -50,12 +50,11 @@ async function handle(i) {
 async function search(word) {
   console.log(`searching for ${word}`)
   let options = {
-    method: 'POST',
-    uri: 'https://kissmanga.com/AdvanceSearch',
-    form: {mangaName: word}
-//    data: 'type=Manga&keyword=' + word
+    uri: 'https://kissmanga.com/Search/SearchSuggest',
+    form: {type: 'Manga', keyword: word}
   }
-  return await cloudscraper(options)
+  let page = await cloudscraper.post(options)//.then(console.log, console.error)
+  return page
 }
 
 router.route('/api/read').get(async function(req, res) {
