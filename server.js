@@ -57,6 +57,16 @@ async function search(word) {
   return page
 }
 
+async function advanceSearch(word) {
+  console.log(`advsearching for ${word}`)
+  let options = {
+    uri: 'https://kissmanga.com/AdvanceSearch',
+    form: {mangaName: word}
+  }
+  let page = await cloudscraper.post(options)//.then(console.log, console.error)
+  return page
+}
+
 router.route('/api/read').get(async function(req, res) {
   //console.log(req.query.c)
   let c = req.query.c
@@ -68,6 +78,12 @@ router.route('/api/read').get(async function(req, res) {
 router.route('/search').get(async function(req, res) {
   let q = req.query.q
   let page = await search(q)
+  res.send(page)
+})
+
+router.route('/advsearch').get(async function(req, res) {
+  let q = req.query.q
+  let page = await advanceSearch(q)
   res.send(page)
 })
 
