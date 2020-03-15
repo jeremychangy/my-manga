@@ -1,6 +1,6 @@
 ## my-manga
 
-A web app used to read Gintama (soon to be more mangas)
+A react web app to read Gintama. Firebase, login implementation.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
